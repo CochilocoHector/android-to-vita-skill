@@ -1,7 +1,7 @@
 # 案例：The Settlers HD
 
 - 项目仓库：<https://github.com/CochilocoHector/settlers-vita>
-- 逆向知识库：<https://github.com/CochilocoHector/settlers-vita/tree/main/docs/kb>
+- 逆向知识库：<https://github.com/CochilocoHector/settlers-vita/tree/main/docs/reverse-engineering>
 - 状态：图形完整（地形/精灵/动画/菜单/HUD），音频最小闭环（v0.60）
 
 ## 这个案例贡献了哪些通用方法
@@ -18,11 +18,14 @@
 ## 游戏专属内容在哪里
 
 函数地址、全局变量、资源命名、音量刻度等**不写在本仓库**，
-统一放在项目的 `docs/kb/`：
+统一放在项目的 `docs/reverse-engineering/`：
 
-- `addresses.md`：函数/全局地址
-- `resources.md`：资源格式与命名
-- `jni-audio.md`：JNI 方法表与音频语义
-- `crash-and-memory.md`：崩溃与内存事实
+- `01-binaries-and-loading.md`：二进制、基址、全局变量
+- `02-rendering-and-textures.md`：渲染与纹理
+- `03-gui-and-gameswf.md`：GUI 调用链与图集名
+- `04-audio-and-jni.md`：JNI 方法表与音频语义
+- `05-resources.md`：资源格式与映射
+- `06-excluded-hypotheses.md`：已排除的错误假设
+- `07-corrections.md`：结论修正记录
 
 本仓库只保留"可迁移到其他项目的做法"，避免把某个游戏的地址当成标准。
