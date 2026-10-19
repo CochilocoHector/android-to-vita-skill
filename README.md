@@ -12,7 +12,12 @@
 SKILL.md                     核心流程（先读这个）
 CHECKLIST.md                 移植检查表
 docs/
-  01-feasibility-and-loader.md   可行性体检 + so-loader 骨架
+  00-static-reverse-engineering.md  静态逆向总流程（核心）
+  00a-dex-analysis.md               APK/DEX 分析
+  00b-arm-disassembly.md            ARM ELF 与反汇编
+  00c-call-graph-and-dataflow.md    调用链与数据流
+  00d-original-behavior-reconstruction.md 原版行为还原
+  01-feasibility-and-loader.md      可行性体检 + so-loader 骨架
   02-graphics-and-textures.md    图形与纹理解码（含马赛克根因）
   03-jni-and-java.md             JNI 方法表、NULL methodID 陷阱
   04-gui-swf.md                  gameswf / SWF 界面与图集名匹配
@@ -22,10 +27,16 @@ docs/
 templates/
   touch.cfg                  运行时配置模板
   build-vpk.yml              GitHub Actions 构建工作流
+cases/                       真实案例（含验证状态）
 tools/
-  psp2dmp_parse.py           解析 Vita 崩溃 dump
+  apk_info.py                APK 结构与架构概览
   dex_class_methods.py       从 dex 提取 Java 方法表
+  jni_diff.py                dex 方法 vs 兼容层注册表差异
+  elf_info.py                ELF 依赖/导入/导出/重定位
+  arm_xrefs.py               地址符号化与交叉引用
   btex_info.py               解析 BTEX/PVR 纹理头
+  psp2dmp_parse.py           解析 Vita 崩溃 dump
+  log_stats.py               日志事件统计
 ```
 
 ## 怎么用

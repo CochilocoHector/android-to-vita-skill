@@ -1,10 +1,20 @@
-# 案例：The Settlers HD
+# 项目总览：The Settlers HD
 
-- 项目仓库：<https://github.com/CochilocoHector/settlers-vita>
+- 移植仓库：<https://github.com/CochilocoHector/settlers-vita>
 - 逆向知识库：<https://github.com/CochilocoHector/settlers-vita/tree/main/docs/reverse-engineering>
-- 状态：图形完整（地形/精灵/动画/菜单/HUD），音频最小闭环（v0.60）
+- 状态：图形完整（地形/精灵/动画/菜单/HUD），音频最小闭环（v0.61 待实机验证）
 
-## 这个案例贡献了哪些通用方法
+## 案例索引
+
+| 案例 | 领域 | 状态 |
+|---|---|---|
+| [device_type 被重置](settlers-device-type.md) | 黑屏 | ✅ |
+| [压缩纹理解码](settlers-compressed-textures.md) | 马赛克 | ✅ |
+| [GUI 图集名匹配](settlers-gui-atlas-names.md) | 菜单空白 | ✅ |
+| [JNI 方法映射缺失](settlers-jni-null-methodid.md) | 静音 | ✅ |
+| [音频 voice 生命周期](settlers-audio-voice-lifecycle.md) | 音调异常 | ◐ 待验证 |
+
+## 这个项目贡献了哪些通用方法
 
 | 通用方法 | 条目 |
 |---|---|
@@ -14,18 +24,12 @@
 | SWF 图集名后缀匹配 | G-08 |
 | dump 对比判定确定性 | G-09 |
 | 系统工具改内存事故 | G-10 |
+| 采样率可能逐文件不同 | G-11 |
+| 播放器实例生命周期语义 | G-12 |
 
-## 游戏专属内容在哪里
+## 游戏专属内容
 
 函数地址、全局变量、资源命名、音量刻度等**不写在本仓库**，
-统一放在项目的 `docs/reverse-engineering/`：
+见项目的 `docs/reverse-engineering/` 各文件。
 
-- `01-binaries-and-loading.md`：二进制、基址、全局变量
-- `02-rendering-and-textures.md`：渲染与纹理
-- `03-gui-and-gameswf.md`：GUI 调用链与图集名
-- `04-audio-and-jni.md`：JNI 方法表与音频语义
-- `05-resources.md`：资源格式与映射
-- `06-excluded-hypotheses.md`：已排除的错误假设
-- `07-corrections.md`：结论修正记录
-
-本仓库只保留"可迁移到其他项目的做法"，避免把某个游戏的地址当成标准。
+本仓库只保留"可迁移到其他项目的做法"。

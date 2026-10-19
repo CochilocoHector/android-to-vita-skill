@@ -9,6 +9,11 @@
 | `psp2dmp_parse.py` | 解析崩溃 dump：应用名、内存分区、寄存器候选 | 多次崩溃分析 | verified |
 | `dex_class_methods.py` | 提取 dex 类方法表（名称/签名/static/native） | 音频 JNI 定位 | verified |
 | `btex_info.py` | 解析 BTEX/PVR 头（版本/宽高/位深） | 纹理格式确认 | verified |
+| `apk_info.py` | APK 结构：DEX/ABI/SO/assets/res | 可行性体检 | verified |
+| `elf_info.py` | ELF 依赖/导入/导出/PLT 桩地址 | 符号与导入定位 | verified |
+| `arm_xrefs.py` | 地址符号化 + Thumb BL 交叉引用 | 找调用者 | verified |
+| `jni_diff.py` | DEX 方法 vs 兼容层注册表差异 | JNI 缺口检测 | verified |
+| `log_stats.py` | 日志事件统计与重复分析 | 日志治理 | verified |
 
 ## 待固化（重复出现过 ≥2 次）
 
